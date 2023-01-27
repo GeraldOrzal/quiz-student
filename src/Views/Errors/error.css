@@ -1,0 +1,9 @@
+.Error{
+    display:flex;
+    flex-direction: row;
+    align-items:center;
+    height:inherit;
+}
+.Error svg{
+    width: 50vw;
+}

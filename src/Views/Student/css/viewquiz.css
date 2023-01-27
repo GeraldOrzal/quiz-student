@@ -1,0 +1,22 @@
+@import "../../../index.css";
+
+.card-footer > *{
+    margin-left: 10px;
+    
+}
+
+.questionAnswer{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+.question-cont{
+    min-width:30vw;
+}
+@media (min-width: 575.98px) { 
+    
+    .question-cont{
+        display:flex;
+        flex-direction: column;
+    }
+}
