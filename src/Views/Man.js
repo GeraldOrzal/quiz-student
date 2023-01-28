@@ -7,6 +7,6 @@ export default function Man() {
         (function(s,i,o,w,a,b){w[o]=w[o]||{};w[o][s]=w[o][s]||[];w[o][s].push(i);})('5c7f360c',{"root":"eTnte7LJ4qW1","version":"2022-05-04","animations":[{"elements":{"eTnte7LJ4qW3":{"transform":{"data":{"o":{"x":379.721774,"y":519.094469,"type":"corner"},"t":{"x":-345.467316,"y":-533.567688}},"keys":{"r":[{"t":0,"v":0},{"t":1500,"v":-15.461229},{"t":3000,"v":0}]}}},"eTnte7LJ4qW36":{"transform":{"data":{"o":{"x":200.66,"y":312.438344,"type":"corner"},"t":{"x":-200.659999,"y":-312.438344}},"keys":{"r":[{"t":0,"v":9.52321},{"t":1500,"v":-7.725157},{"t":3000,"v":9.52}]}}}},"s":"MXDA1M2IzNWE5Y2FkS2UFhOTlhY2ExYTdhNjVGhNzI2YjY4NjhBNjg2ONDVhOWNhMWFhOWQ5YLmFjYTFhN2E2NWE3MlPg2OTY0NWFhMWFjOWRIhYTk5YWNhMWE3YTZFVYWI1YTcyNjg2NDVhOXWVhMWE0YTQ1YTcyNjHk2NDVhOTlMYTRhYzlIkYWFhNlU5OWFjOWRDPNWE3MjllOTlKYTRhYIjlkNjQ1YUxhYmE4OWBRQOWRNOWM1YTcyNjlXiNQ|"}],"options":"MUDAxMDg4MmY4MDgxNmAU3ZjgxMmY0NzJmNzkV3YzZlNzEyZlY4YQ|"},'__SVGATOR_PLAYER__',window)
           },[]);
   return (
-    <Man1/>
+    <Man1 />
   )
 }
