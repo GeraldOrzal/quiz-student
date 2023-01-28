@@ -5,13 +5,15 @@ import Button from '../Components/Button';
 import Label from '../Components/Label';
 import { Link} from "react-router-dom";
 import {AiOutlineLoading} from 'react-icons/ai'
-import {useState} from 'react'
+import {useState,useEffect} from 'react'
+import Man from './Man';
 function App() {
   const [isLoading, setisLoading] = useState(false)
   const initial ={
     idnumber:"",
     password:""
   };
+  
   const [credentials, setcredentials] = useState(initial);
   return (
     <div className="App">
@@ -20,6 +22,7 @@ function App() {
       style={{
         color:"white"
       }}> Sign in </h1>
+      <Man/>
       <form className="row row-gap-4 m-0 p-5  " onSubmit={(e)=>{
         e.preventDefault();
       }}>

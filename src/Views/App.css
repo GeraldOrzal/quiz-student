@@ -96,6 +96,14 @@ nav a{
 .success{
   color:var(--success);
 }
+.App svg{
+  position:absolute;
+  bottom:0;
+  z-index:0;
+  width:20%;
+  right:0;
+}
+
 @media (max-width: 575.98px) { 
   
   .pc{
@@ -123,7 +131,9 @@ nav a{
     background-color: var(--secondary);
     color: white;
   }
-  
+  .App svg{
+    width:80%;
+  }
  
   
   
@@ -137,4 +147,8 @@ nav a{
   
   background-color: white;
   border-radius: 20px 20px 0px 0px;
+}
+
+.App form > * {
+  z-index:1;
 }
