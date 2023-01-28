@@ -15,8 +15,12 @@ function App() {
   const [credentials, setcredentials] = useState(initial);
   return (
     <div className="App">
-      <h1>Sign in </h1>
-      <form className="row row-gap-4 m-0 p-5  rounded " onSubmit={(e)=>{
+      <h1 
+      className="p-3"
+      style={{
+        color:"white"
+      }}> Sign in </h1>
+      <form className="row row-gap-4 m-0 p-5  " onSubmit={(e)=>{
         e.preventDefault();
       }}>
           <h2>Hello Student!</h2>

@@ -128,3 +128,13 @@ nav a{
   
   
 }
+.App{
+  background-color: var(--primary);
+  
+}
+.App form{
+  border-top: solid 1px black;
+  
+  background-color: white;
+  border-radius: 20px 20px 0px 0px;
+}
