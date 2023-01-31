@@ -13,6 +13,9 @@
 .question-cont{
     min-width:30vw;
 }
+.ViewQuiz .content .card{
+    width: 100vw;
+}
 @media (min-width: 575.98px) { 
     
     .question-cont{

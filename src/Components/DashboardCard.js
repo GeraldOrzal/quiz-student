@@ -1,16 +1,23 @@
 import React from 'react'
 import {AiOutlineClockCircle} from 'react-icons/ai'
-export default function DashboardCard({ title, description }) {
+import {formatDate} from "../Helpers/DateHelpers"
+import {Link} from  'react-router-dom'
+export default function DashboardCard({ title, description ,datetime,id,data}) {
+    datetime = formatDate(datetime)
     return (
-        <div className="card">
-            <div className="card-body">
+        <Link to={`/quiz/${id}`}
+        state={data}
+        >
+            <div className="card">
+                <div className="card-body">
 
-                <h5 className="card-title">{title}</h5>
-                {description}
+                    <h5 className="card-title">{title}</h5>
+                    {description}
+                </div>
+                <div className='card-footer'> 
+                    <AiOutlineClockCircle/> {datetime}
+                </div>
             </div>
-            <div className='card-footer'> 
-                <AiOutlineClockCircle/> 01-10-2023 : 08:30 pm
-            </div>
-        </div>
+        </Link>
     )
 }

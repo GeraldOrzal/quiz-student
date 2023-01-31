@@ -7,14 +7,18 @@ import { Link} from "react-router-dom";
 import {AiOutlineLoading} from 'react-icons/ai'
 import {useState,useEffect} from 'react'
 import Man from './Man';
+import authService from '../Services/AuthService'
+import { useNavigate} from "react-router-dom";
 function App() {
   const [isLoading, setisLoading] = useState(false)
   const initial ={
     idnumber:"",
     password:""
   };
-  
+  const history = useNavigate()
   const [credentials, setcredentials] = useState(initial);
+  const [error, seterror] = useState(null)
+
   return (
     <div className="App">
       <h1 
@@ -24,9 +28,24 @@ function App() {
       }}> Sign in </h1>
       <Man/>
       <form className="row row-gap-4 m-0 p-5  " onSubmit={(e)=>{
+        console.log("RUN")
         e.preventDefault();
+        setisLoading(true);
+        authService.login(credentials,(data)=>{
+          console.log(data)
+          if(data.status==403){
+            
+            seterror(data)
+            setisLoading(false);
+            return;
+          }
+          seterror(null)
+          history(`/user/${data.user.id}`);
+          
+        })
       }}>
           <h2>Hello Student!</h2>
+          {error&&<h4>{error.message}</h4>}
           <Label>ID Number:</Label>
           <Input type="text" onChange={(e)=>{
             if (/^\s*$/.test(e.target.value)) {
@@ -67,9 +86,8 @@ function App() {
             }}
           />
           <Button
-            onClick={(e)=>{
-              setisLoading(true);
-            }}
+            
+            
             className={isLoading ||/^\s*$/.test(credentials.idnumber)||/^\s*$/.test(credentials.password)?"disabled":""}
             disabled={isLoading||/^\s*$/.test(credentials.idnumber)||/^\s*$/.test(credentials.password)}
           >{isLoading?<AiOutlineLoading id="loading"/>:"Login"}</Button>

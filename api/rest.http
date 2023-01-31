@@ -1,0 +1,28 @@
+GET http://localhost:5000/choices/21
+content-type: application/json
+
+###
+GET http://localhost:5000/quiz/2?userid=13
+content-type: application/json
+
+###
+POST http://localhost:5000/answer
+content-type: application/json
+
+{
+    "userid":14,
+    "quiz_id":2,
+    "score":22,
+    "totalscore":20
+}
+
+###
+POST http://localhost:5000/login
+content-type: application/json
+
+{
+    "id":10001,
+    "password":"admin123"
+}
+
+
