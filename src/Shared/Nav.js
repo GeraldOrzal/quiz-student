@@ -1,8 +1,10 @@
 import React,{useRef} from 'react'
-import {Link} from  'react-router-dom'
+import {Link,useNavigate} from  'react-router-dom'
 import {AiOutlineMenu} from 'react-icons/ai'
 import{MdOutlineSpaceDashboard,MdOutlineQuiz,MdOutlineLogout} from 'react-icons/md'
+import authService from '../Services/AuthService'
 export default function Nav() {
+  const navigate = useNavigate();
   const bg = useRef();
   const rightPanel = useRef();
   return (
@@ -11,8 +13,18 @@ export default function Nav() {
             <img/>
         </div>
         
-          <Link className="pc" to="/user/5">Dashboard</Link>
-          <Link className="pc" to="index">Logout</Link>
+          <Link className="pc" to="/home">Dashboard</Link>
+
+          <form 
+          className="pc"
+          onSubmit={(e)=>{
+            e.preventDefault();
+            authService.logout(()=>{
+              navigate("/")
+            })
+          }} method="POST">
+              <button type="submit"> Logout</button>
+          </form>
         
         <AiOutlineMenu className="mobile"
           color='white'
@@ -41,8 +53,15 @@ export default function Nav() {
          ref={rightPanel}
         >
             
-            <Link to="/user/5"><MdOutlineSpaceDashboard/> Dashboard</Link>
-            <Link to="index"><MdOutlineLogout/> Logout</Link>
+            <Link to="/home"><MdOutlineSpaceDashboard/> Dashboard</Link>
+            <form onSubmit={(e)=>{
+            e.preventDefault();
+            authService.logout(()=>{
+              navigate("/")
+            })
+          }} method="POST">
+              <button type="submit"><MdOutlineLogout/> Logout</button>
+            </form>
             
         </div>
     </nav>

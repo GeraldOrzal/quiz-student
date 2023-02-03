@@ -25,9 +25,19 @@ const  user = async ()=>{
   }
   return null
 } 
+const logout = async (cb)=>{
+  const data = await (await fetch(`${baseURL}/logout`,{
+    method:"POST",
+    headers: new Headers({'content-type': 'application/json'}),
+    credentials:"include",
+    
+  })).json()
+  cb();
+}
 const authService = {
     login,
-    user
+    user,
+    logout
 };
 
 export default authService;

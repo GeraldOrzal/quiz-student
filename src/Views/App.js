@@ -40,7 +40,7 @@ function App() {
             return;
           }
           seterror(null)
-          history(`/user/${data.user.id}`);
+          history(`/home`);
           
         })
       }}>

@@ -7,6 +7,7 @@ const userRoutes = require("./auth/index")
 const quizRoutes = require("./quiz/index")
 const cors = require("cors");
 const session =require("express-session")
+
 var MySQLStore = require('express-mysql-session')(session);
 var app = express();
 
@@ -67,6 +68,7 @@ app.use(function(err, req, res, next) {
 
 app.use(userRoutes);
 app.use(quizRoutes);
+
 const port = 5000;
 
 app.listen(port, () => {

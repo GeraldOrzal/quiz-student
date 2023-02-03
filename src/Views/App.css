@@ -44,6 +44,16 @@ nav a:hover{
   color:var(--secondary);
   font-weight: bold;
 }
+nav form button{
+  font-weight: normal;
+  padding:3px;
+}
+nav form button:hover:enabled{
+  background-color:transparent;
+  box-shadow: none;
+  color:var(--secondary);
+  font-weight: bold;
+}
 nav div{
   flex: 1;
 }
@@ -124,7 +134,7 @@ nav a{
     flex-direction: column;
     transition:  right 2s linear;
   }
-  .mobile-right >a{
+  .mobile-right >a,form{
     padding: 20px;
   }
   .mobile-right > a:hover{

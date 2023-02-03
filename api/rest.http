@@ -25,4 +25,8 @@ content-type: application/json
     "password":"admin123"
 }
 
+###
+GET http://localhost:5000/viewquiz/2
+content-type: application/json
+
 
