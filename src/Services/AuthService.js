@@ -23,7 +23,7 @@ const  user = async ()=>{
   if(!data.data){
     return redirect("/")
   }
-  return null
+  return data.data
 } 
 const logout = async (cb)=>{
   const data = await (await fetch(`${baseURL}/logout`,{

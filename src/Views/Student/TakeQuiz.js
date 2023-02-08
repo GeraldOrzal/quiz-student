@@ -7,7 +7,7 @@ import { AiOutlineLoading } from 'react-icons/ai'
 import { useSearchParams,useParams, useLocation,useNavigate } from "react-router-dom"
 import './css/viewquiz.css';
 import quizService from '../../Services/QuizService'
-
+import { useLoaderData } from 'react-router-dom'
 
 export default function ViewQuiz(props) {
 
@@ -20,6 +20,7 @@ export default function ViewQuiz(props) {
         questionsIndex: 0,
         groupQuestionsIndex: 0
     });
+    const user = useLoaderData();
     const  [isLoading,setisLoading]= useState(false);
     const [choices, setchoices] = useState({
         choices: [],
@@ -47,7 +48,7 @@ export default function ViewQuiz(props) {
         })
     }, [currentIndex.groupQuestionsIndex])
     return <div className="ViewQuiz">
-        <Nav />
+        <Nav user={user}/>
         
         <div className="content">
             

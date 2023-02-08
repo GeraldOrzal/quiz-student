@@ -76,7 +76,10 @@ const  getAnswers = async ({params})=>{
       headers: new Headers({'content-type': 'application/json'}),
     })).json()
     console.log(data)
-    return data;
+    return {
+      user:data1.data,
+      quiz:data
+    };
 }
 const  checkIfCleared = async ({params,request})=>{
   console.log(request)
@@ -100,7 +103,7 @@ const  checkIfCleared = async ({params,request})=>{
   if(cleared.message=="THE USER ALREADY TOOK THE QUIZ"){
     return redirect(`/viewquiz/${params.id}`)
   }
-  return null;
+  return data.data;
 }
 const quizService = {
     getAllQuiz,

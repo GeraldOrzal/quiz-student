@@ -3,12 +3,12 @@ import Nav from '../../Shared/Nav'
 import './css/viewquiz.css';
 import { useLoaderData } from 'react-router-dom'
 export default function TakeQuiz() {
-    const data = useLoaderData();
-    const [questions, setquestions] = useState(data)
-    console.log(data)
+    const {quiz,user} = useLoaderData();
+    const [questions, setquestions] = useState(quiz)
+    
     return (
         <div>
-            <Nav />
+            <Nav user={user}/>
             <div className="container-fluid">
 
                 
